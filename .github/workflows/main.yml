@@ -8,7 +8,7 @@ on:
                     - homologacao
                     - producao
 jobs:
-    deploy-fake-homologacao:
+    deploy-fake-homolog:
         runs-on: ubuntu-latest
         environment: homologacao
         steps:
@@ -17,7 +17,7 @@ jobs:
     teste-fake:
         runs-on: ubuntu-latest
         environment: homologacao
-        needs:[deploy-fake-homologacao]
+        needs:[deploy-fake-homolog]
         steps:
             - name: Fake de deploy em ambiente
               run: echo "Deploy no ambiente de ${{ vars.AMBIENTE_DEPLOY }}"
